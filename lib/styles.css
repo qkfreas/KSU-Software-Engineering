@@ -48,5 +48,8 @@ header {
 }
 .nav .login {
     float: right;
+}
 
+.center-stage {
+    margin: 15px 40%;
 }
