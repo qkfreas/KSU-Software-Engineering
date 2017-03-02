@@ -15,5 +15,29 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://D:/PHP" />
+          <root url="file://$APPLICATION_HOME_DIR$/jre/jre/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://D:/PHP" />
+          <root url="file://$APPLICATION_HOME_DIR$/jre/jre/bin" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://D:/PHP/pharcommand.phar/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="phar://D:/PHP/pharcommand.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
