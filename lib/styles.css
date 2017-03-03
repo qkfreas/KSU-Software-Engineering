@@ -52,3 +52,11 @@ header {
 .center-stage {
     margin: 15px 40%;
 }
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a:visited {
+    color: black;
+}
