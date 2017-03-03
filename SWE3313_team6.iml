@@ -18,24 +18,24 @@
     <orderEntry type="module-library">
       <library name="PHP" type="php">
         <CLASSES>
-          <root url="file://D:/PHP" />
           <root url="file://$APPLICATION_HOME_DIR$/jre/jre/bin" />
+          <root url="file://C:/Program Files/PHP/v7.1" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://D:/PHP" />
           <root url="file://$APPLICATION_HOME_DIR$/jre/jre/bin" />
+          <root url="file://C:/Program Files/PHP/v7.1" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://D:/PHP/pharcommand.phar/" />
+          <root url="phar://C:/Program Files/PHP/v7.1/pharcommand.phar/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="phar://D:/PHP/pharcommand.phar/" />
+          <root url="phar://C:/Program Files/PHP/v7.1/pharcommand.phar/" />
         </SOURCES>
       </library>
     </orderEntry>
