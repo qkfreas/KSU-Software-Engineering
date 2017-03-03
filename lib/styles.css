@@ -43,8 +43,7 @@ header {
     padding: 0px;
     text-align: center;
     border-radius: 5px;
-    color: white;
-    font-weight: none;
+    font-weight: normal;
 }
 .nav .login {
     float: right;
