@@ -6,28 +6,16 @@
     <title>Mario's Pizza Parlor - Login</title>
 </head>
 <body>
-
-<header>
-    <div>
-        <a href="index.html"><h1 class="head">Mario's Pizza Parlor</h1></a>
-    </div>
-    <div class="nav">
-        <a href="index.html" class="button">Home</a>
-        <a href="deals.html" class="button">Deals</a>
-        <a href="login.html" type="button" value="Login" class="button_login">Login</a>
-    </div>
-</header>
-
 <div class="center-stage">
     <p>Existing User</p>
-    <form action="gtdata.php" method="POST">
+    <form action="../PHP/gtdata.php" method="GET">
         <input type="email" name="username" class="login" placeholder="Username"><br>
         <input type="password" name="password" class="login" placeholder="Password"><br>
         <input type="submit" value="Submit" class="button_login">
     </form>
     <br>
     <p>New User</p>
-    <form action="create_user.php" method="get">
+    <form action="../PHP/create_user.php" method="GET">
         <input type="email" name="new_username" class="login" placeholder="Username"><br>
         <input type="password" name="new_password" class="login" placeholder="Password"><br>
         <input type="submit" value="Submit" class="button_login">

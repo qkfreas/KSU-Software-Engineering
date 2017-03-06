@@ -5,9 +5,9 @@
  * Date: 3/2/2017
  * Time: 9:58 AM
  */
-//    header('Location: index.html');
+header('Location: index.php');
     $servername="DESKTOP-PAU76IG";
-    $servername="LENOVO-QF";
+//    $servername="LENOVO-QF";
     $username = "qkfreas";
     $password = "password";
     $dbname = "user_info";
@@ -32,19 +32,23 @@ if ($_REQUEST["password"] && $_REQUEST["username"]) {
         die(print_r(sqlsrv_errors(), true));
     }
 
+    $fetched_user_name = NULL;
+    $fetched_user_pass = NULL;
     while ($row = sqlsrv_fetch_array($retval, SQLSRV_FETCH_ASSOC)) {
         $fetched_user_name = $row['user_name'];
         $fetched_user_pass = $row['user_pass'];
     }
 
-    if ($fetched_user_name === $temp_username) {
-        echo "username is correct";
+    if ($fetched_user_name === $temp_username && $fetched_user_pass === $temp_password) {
+        echo "username is correct\n";
+        $_SESSION['id'] = $fetched_user_name;
+//        session_start();
+        header('Location: index.php');
     }
-    if ($fetched_user_pass === $temp_password) {
-        echo "password is correct";
-    }
+    else
+        header('Location: login.php');
 
-    echo "Fetched data successfully\n";
 }
+
    sqlsrv_close($conn);
 ?>
