@@ -1,5 +1,7 @@
 <?php
+//header('Location: index.html');
 $servername="DESKTOP-PAU76IG";
+$servername="LENOVO-QF";
 $username = "qkfreas";
 $password = "password";
 $dbname = "user_info";

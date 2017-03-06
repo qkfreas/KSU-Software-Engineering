@@ -5,32 +5,46 @@
  * Date: 3/2/2017
  * Time: 9:58 AM
  */
-   $dbhost = 'localhost:3036';
-   $dbuser = 'root';
-   $dbpass = 'rootpassword';
+//    header('Location: index.html');
+    $servername="DESKTOP-PAU76IG";
+    $servername="LENOVO-QF";
+    $username = "qkfreas";
+    $password = "password";
+    $dbname = "user_info";
 
-   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+    $connectionInfo = array("Database"=>$dbname,"UID" =>$username, "PWD"=>$password, "MultipleActiveResultSets"=>true);
 
-   if(! $conn ) {
-       die('Could not connect: ' . mysql_error());
-   }
+    $conn = sqlsrv_connect($servername,$connectionInfo);
 
-   $sql = 'SELECT emp_id, emp_name, emp_salary FROM employee';
-   mysql_select_db('test_db');
-   $retval = mysql_query( $sql, $conn );
+    if($conn === false) {
+        die(print_r(sqlsrv_errors(), true));
+    }
 
-   if(! $retval ) {
-       die('Could not get data: ' . mysql_error());
-   }
+if ($_REQUEST["password"] && $_REQUEST["username"]) {
+    $temp_password = md5('blah@#$' . sha1('3NhNj8&' . $_REQUEST["password"]));
+    $temp_username = $_REQUEST["username"];
 
-   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-       echo "EMP ID :{$row['emp_id']}  <br> ".
-           "EMP NAME : {$row['emp_name']} <br> ".
-           "EMP SALARY : {$row['emp_salary']} <br> ".
-           "--------------------------------<br>";
-   }
 
-   echo "Fetched data successfully\n";
+    $sql = 'SELECT user_name,user_pass FROM users';
+    $retval = sqlsrv_query($conn, $sql);
 
-   mysql_close($conn);
+    if (!$retval) {
+        die(print_r(sqlsrv_errors(), true));
+    }
+
+    while ($row = sqlsrv_fetch_array($retval, SQLSRV_FETCH_ASSOC)) {
+        $fetched_user_name = $row['user_name'];
+        $fetched_user_pass = $row['user_pass'];
+    }
+
+    if ($fetched_user_name === $temp_username) {
+        echo "username is correct";
+    }
+    if ($fetched_user_pass === $temp_password) {
+        echo "password is correct";
+    }
+
+    echo "Fetched data successfully\n";
+}
+   sqlsrv_close($conn);
 ?>
