@@ -7,7 +7,7 @@
  */
 header('Location: index.php');
     $servername="DESKTOP-PAU76IG";
-//    $servername="LENOVO-QF";
+    $servername="LENOVO-QF";
     $username = "qkfreas";
     $password = "password";
     $dbname = "user_info";
@@ -42,7 +42,7 @@ if ($_REQUEST["password"] && $_REQUEST["username"]) {
     if ($fetched_user_name === $temp_username && $fetched_user_pass === $temp_password) {
         echo "username is correct\n";
         $_SESSION['id'] = $fetched_user_name;
-//        session_start();
+        session_start('id');
         header('Location: index.php');
     }
     else

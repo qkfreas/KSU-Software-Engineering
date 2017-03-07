@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../HTML/styles.css">
     <meta charset="UTF-8">
     <title>Mario's Pizza Parlor</title>
 </head>
 <header>
     <div>
-        <a href="index.php"><h1 class="head">Mario's Pizza Parlor</h1></a>
+        <a href="../PHP/index.php"><h1 class="head">Mario's Pizza Parlor</h1></a>
     </div>
     <div class="nav">
         <a href="../PHP/index.php" class="button">Home</a>
@@ -15,12 +15,11 @@
         <a href="../PHP/contact.php" class="button">Contact Us</a>
         <a href="../PHP/about.php" class="button">About Us</a>
         <?php session_start();?>
-        <?php if(isset($_SESSION['username'])): ?>
+        <?php if(isset($_SESSION['id'])): ?>
         <p>Welcome!</p>
         <?php else: ?>
-        <a href="login.php" class="button_login">Login</a>
+        <a href="../PHP/login.php" class="button_login">Login</a>
         <?php endif; ?>
-        <!--<a href="../PHP/login.php" type="button" value="Login" class="button_login">Login</a>-->
     </div>
 </header>
 </html>

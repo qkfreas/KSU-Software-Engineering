@@ -1,8 +1,6 @@
 <?php
-include("login.html");
-//header('Location: index.html.old');
 $servername="DESKTOP-PAU76IG";
-//$servername="LENOVO-QF";
+$servername="LENOVO-QF";
 $username = "qkfreas";
 $password = "password";
 $dbname = "user_info";

@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="../HTML/styles.css">
 <?php
+include("../HTML/header.html");
+include("../HTML/deals.html");
 /**
  * Created by IntelliJ IDEA.
  * User: Quinn F
