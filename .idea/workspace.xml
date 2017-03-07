@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffb1024-cba9-4e64-984b-986f6e96e860" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/PHP/gtdata.php" afterPath="$PROJECT_DIR$/lib/PHP/get_user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/HTML/login.html" afterPath="$PROJECT_DIR$/lib/HTML/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PHP/login.php" afterPath="$PROJECT_DIR$/lib/PHP/login.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,8 +73,8 @@
       <file leaf-file-name="get_user.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/PHP/get_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+            <state relative-caret-position="119">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding>
                 <marker date="1488909229695" expanded="true" signature="723:760" ph="SELECT user_... users" />
                 <marker date="1488909229695" expanded="true" signature="953:1012" ph="SELECT * FRO... users" />
@@ -276,7 +272,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="database.sql.templating" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="last_opened_file_path" value="C:/Program Files/PHP/v7.1/php.exe" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -725,7 +721,7 @@
       <workItem from="1488901669164" duration="74000" />
       <workItem from="1488901769201" duration="2444000" />
       <workItem from="1488908661900" duration="98000" />
-      <workItem from="1488908783343" duration="1535000" />
+      <workItem from="1488908783343" duration="1688000" />
     </task>
     <task id="LOCAL-00001" summary="did things">
       <created>1488290455829</created>
@@ -804,11 +800,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488846752238</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Renamed gtdata.php">
+      <created>1488910352801</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1488910352801</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49474000" />
+    <option name="totallyTimeSpent" value="49627000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -861,7 +864,8 @@
     <MESSAGE value="began password dev" />
     <MESSAGE value="Changed home button" />
     <MESSAGE value="Changes to HTML" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to HTML" />
+    <MESSAGE value="Renamed gtdata.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed gtdata.php" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1189,8 +1193,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/PHP/get_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        <state relative-caret-position="119">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
             <marker date="1488909229695" expanded="true" signature="723:760" ph="SELECT user_... users" />
             <marker date="1488909229695" expanded="true" signature="953:1012" ph="SELECT * FRO... users" />
