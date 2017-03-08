@@ -5,9 +5,8 @@
  * Date: 3/2/2017
  * Time: 9:58 AM
  */
-session_abort();
-    $servername="DESKTOP-PAU76IG";
-//    $servername="LENOVO-QF";
+//    $servername="DESKTOP-PAU76IG";
+    $servername="LENOVO-QF";
     $username = "qkfreas";
     $password = "password";
     $dbname = "user_info";
@@ -24,27 +23,20 @@ if ($_REQUEST["password"] && $_REQUEST["username"]) {
 
     $stm = sqlsrv_query($conn,"SELECT * FROM users WHERE user_name='$temp_username' AND user_pass='$temp_password'");
     $row = sqlsrv_fetch_array($stm);
-//    echo "YOOOHOOOOO\n";
-//    echo "\nrow => ";
-//    echo count($row);
-//    echo "\ntemp_pass => ";
-//    echo $temp_password;
-//    echo "\ntemp_username => ";
-//    echo $temp_username;
     if (!$row)
-    die(print_r(sqlsrv_errors(), true));
+        die(print_r(sqlsrv_errors(), true));
 
 
     if (count($row) !== 0) {
         $id = $temp_username;
-        session_start($id);
-        echo session_id($id);
-        echo "HELLO!!!";
+        session_start();
+        $_SESSION['id'] = true;
         header('Location: index.php');
+        exit();
     }
-    else {
+else {
         echo "didn't work";
-//        header('Location: login.php');
+        header('Location: login.php');
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
-$servername="DESKTOP-PAU76IG";
-//$servername="LENOVO-QF";
+//$servername="DESKTOP-PAU76IG";
+$servername="LENOVO-QF";
 $username = "qkfreas";
 $password = "password";
 $dbname = "user_info";
@@ -26,6 +26,7 @@ if ($_REQUEST["new_password"] && $_REQUEST["new_username"]) {
     }
     else {
         echo "Record add successful";
+        header('Location: login.php');
     }
 }
 sqlsrv_close($conn);
