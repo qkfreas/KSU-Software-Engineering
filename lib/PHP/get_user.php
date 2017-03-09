@@ -5,13 +5,8 @@
  * Date: 3/2/2017
  * Time: 9:58 AM
  */
-//    $servername="DESKTOP-PAU76IG";
-    $servername="LENOVO-QF";
-    $username = "qkfreas";
-    $password = "password";
-    $dbname = "user_info";
-
-    $connectionInfo = array("Database"=>$dbname,"UID" =>$username, "PWD"=>$password, "MultipleActiveResultSets"=>true);
+include "server.php";
+//    $connectionInfo = array("Database"=>$dbname,"UID" =>$username, "PWD"=>$password, "MultipleActiveResultSets"=>true);
     $conn = sqlsrv_connect($servername,$connectionInfo);
     if(!$conn) {
         die(print_r(sqlsrv_errors(), true));

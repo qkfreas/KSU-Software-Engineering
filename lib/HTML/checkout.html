@@ -9,14 +9,20 @@
     <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
         <form action="../PHP/checkout.php" method="GET">
+            <span class="error">* required field</span>
             <p>Delivery Address</p>
-            <input type="text" name="street1" placeholder="Street Address 1"><br>
+            <input type="text" name="street1" placeholder="Street Address 1">
+            <span class="error">* <?php echo $street1Err;?></span><br>
             <input type="text" name="street2" placeholder="Street Address 2"><br>
-            <input type="text" name="city" placeholder="City"><br>
-            <input type="text" name="state" placeholder="State"><br>
-            <input type="text" name="zip_code" placeholder="Zip Code"><br>
+            <input type="text" name="city" placeholder="City">
+            <span class="error">* <?php echo $cityErr ?></span><br>
+            <input type="text" name="state" placeholder="State">
+            <span class="error">* <?php echo $stateErr ?></span><br>
+            <input type="text" name="zip_code" placeholder="Zip Code">
+            <span class="error">* <?php echo $zip_codeErr?></span><br>
             <br>
             <input type="tel" name="phone_number" placeholder="Phone Number">
+            <span class="error">* <?php echo $zip_code ?></span><br>
             <br>
             <br>
             <p>Payment Method</p>
@@ -29,6 +35,10 @@
             <input type="date" name="exp_date">
             <br>CSV
             <input type="text" name="cvv_code">
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="Submit">
         </form>
 <?php else:?>
         You must be logged in in order to checkout.

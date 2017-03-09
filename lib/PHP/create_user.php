@@ -1,11 +1,7 @@
 <?php
-//$servername="DESKTOP-PAU76IG";
-$servername="LENOVO-QF";
-$username = "qkfreas";
-$password = "password";
-$dbname = "user_info";
+include "server.php";
 
-$connectionInfo = array("Database"=>$dbname,"UID" =>$username, "PWD"=>$password, "MultipleActiveResultSets"=>true);
+//$connectionInfo = array("Database"=>$dbname,"UID" =>$username, "PWD"=>$password, "MultipleActiveResultSets"=>true);
 
 $conn = sqlsrv_connect($servername,$connectionInfo);
 if($conn === false) {
