@@ -1,0 +1,130 @@
+CREATE TABLE `work` (
+  `EmployeeCode` varchar(13) NOT NULL,
+  `InvoiceId` varchar(15) NOT NULL,
+  `Miles` varchar(45) NOT NULL,
+  `Time` date NOT NULL,
+  `Tips` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`EmployeeCode`,`InvoiceId`),
+  KEY `InvoiceId_idx` (`InvoiceId`),
+  CONSTRAINT `EmployeeCode` FOREIGN KEY (`EmployeeCode`) REFERENCES `employee` (`EmployeeCode`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `InvoiceId` FOREIGN KEY (`InvoiceId`) REFERENCES `invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `account` (
+  `Email` varchar(225) NOT NULL,
+  `Passaword` varchar(50) NOT NULL,
+  `CreatedTime` date NOT NULL,
+  PRIMARY KEY (`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `card_info` (
+  `CardNumber` varchar(20) NOT NULL,
+  `Email` varchar(225) NOT NULL,
+  `Bank` varchar(45) NOT NULL,
+  `Type` varchar(45) NOT NULL,
+  PRIMARY KEY (`CardNumber`),
+  KEY `Email_idx` (`Email`),
+  CONSTRAINT `Email` FOREIGN KEY (`Email`) REFERENCES `account` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `customer` (
+  `CustomerId` int(11) NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(225) NOT NULL,
+  `LastName` varchar(225) NOT NULL,
+  `PrefferableName` varchar(225) NOT NULL,
+  `Street` varchar(225) NOT NULL,
+  `State` varchar(45) NOT NULL,
+  `City` varchar(100) NOT NULL,
+  `Zip` varchar(20) NOT NULL,
+  `Phone` varchar(50) DEFAULT NULL,
+  `EmailId` varchar(225) NOT NULL,
+  PRIMARY KEY (`CustomerId`),
+  KEY `Email_idx` (`EmailId`),
+  CONSTRAINT `EmailId` FOREIGN KEY (`EmailId`) REFERENCES `account` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `department` (
+  `Department` varchar(45) NOT NULL,
+  `ManagerCode` varchar(11) NOT NULL,
+  `Description` varchar(225) DEFAULT NULL,
+  PRIMARY KEY (`Department`),
+  KEY `ManagerCode_idx` (`ManagerCode`),
+  CONSTRAINT `ManagerCode` FOREIGN KEY (`ManagerCode`) REFERENCES `manager` (`ManagerCode`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `employee` (
+  `EmployeeCode` varchar(13) NOT NULL,
+  `Department` varchar(45) NOT NULL,
+  `FirstName` varchar(45) NOT NULL,
+  `LastName` varchar(45) NOT NULL,
+  `Salary` varchar(45) NOT NULL,
+  `Stock` varchar(45) NOT NULL,
+  `Phone` varchar(45) NOT NULL,
+  PRIMARY KEY (`EmployeeCode`),
+  KEY `Department_idx` (`Department`),
+  CONSTRAINT `Department` FOREIGN KEY (`Department`) REFERENCES `department` (`Department`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `inventory` (
+  `ItemId` int(11) NOT NULL AUTO_INCREMENT,
+  `Item` varchar(45) DEFAULT NULL,
+  `Weight` decimal(10,0) DEFAULT NULL,
+  `Quantity` decimal(10,0) DEFAULT NULL,
+  `Category` varchar(45) DEFAULT NULL,
+  `Price` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`ItemId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `inventory_product` (
+  `ItemId` int(11) NOT NULL,
+  `ProductId` int(11) NOT NULL,
+  `MaterialCost` varchar(45) NOT NULL,
+  PRIMARY KEY (`ItemId`,`ProductId`),
+  KEY `ProductId_idx` (`ProductId`),
+  KEY `ItemId_idx` (`ItemId`),
+  CONSTRAINT `ItemId` FOREIGN KEY (`ItemId`) REFERENCES `inventory` (`ItemId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ProductId` FOREIGN KEY (`ProductId`) REFERENCES `product` (`ProductId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `invoice` (
+  `InvoiceId` varchar(15) NOT NULL,
+  `SubTotal` decimal(10,0) NOT NULL,
+  `Tax` decimal(10,0) NOT NULL,
+  `Total` decimal(10,0) NOT NULL,
+  `PaymentType` varchar(45) NOT NULL,
+  `DeliveryType` varchar(45) NOT NULL,
+  PRIMARY KEY (`InvoiceId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `invoice` (
+  `InvoiceId` varchar(15) NOT NULL,
+  `SubTotal` decimal(10,0) NOT NULL,
+  `Tax` decimal(10,0) NOT NULL,
+  `Total` decimal(10,0) NOT NULL,
+  `PaymentType` varchar(45) NOT NULL,
+  `DeliveryType` varchar(45) NOT NULL,
+  PRIMARY KEY (`InvoiceId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `manager` (
+  `ManagerCode` varchar(11) NOT NULL,
+  `FirstName` varchar(45) NOT NULL,
+  `LastName` varchar(45) NOT NULL,
+  `Salary` decimal(10,0) NOT NULL,
+  `Stock` varchar(45) NOT NULL,
+  `Phone` varchar(45) NOT NULL,
+  PRIMARY KEY (`ManagerCode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `order` (
+  `InId` varchar(15) NOT NULL,
+  `Pid` int(11) NOT NULL,
+  `Cid` int(11) NOT NULL,
+  `Quantity` int(11) DEFAULT NULL,
+  `Date` date DEFAULT NULL,
+  PRIMARY KEY (`InId`,`Pid`,`Cid`),
+  KEY `ProductId_idx` (`Pid`),
+  KEY `CustomerId_idx` (`Cid`),
+  KEY `InvoicId_idx` (`InId`),
+  CONSTRAINT `Cid` FOREIGN KEY (`Cid`) REFERENCES `customer` (`CustomerId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `InId` FOREIGN KEY (`InId`) REFERENCES `invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `Pid` FOREIGN KEY (`Pid`) REFERENCES `product` (`ProductId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `product` (
+  `ProductId` int(11) NOT NULL AUTO_INCREMENT,
+  `Product` varchar(45) NOT NULL,
+  `Type` varchar(45) NOT NULL,
+  `Image` varchar(225) NOT NULL,
+  `Storage` int(11) NOT NULL,
+  `Price` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`ProductId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
