@@ -19,8 +19,8 @@ header {
 .nav {
     float: none;
     background-color: white;
-    padding: 5px 10px 25px;
-    margin:0;
+    padding: 5px 5px 25px;
+    margin:auto;
 
 }
 .nav h3 {
@@ -67,7 +67,7 @@ a:visited {
     margin: 10px auto;
     padding: 10px;
     display: block;
-    background: url("../images/pizza_header.jpg") 0 0 no-repeat;
+    background: url("../images/pizza_button.jpg") 0 0 no-repeat;
     width: 50%;
     background-size: 100%;
     text-align: center;
