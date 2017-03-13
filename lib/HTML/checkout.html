@@ -8,7 +8,7 @@
 <div class="center-stage">
     <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
-        <form action="../PHP/checkout.php" method="GET">
+        <form action="../PHP/checkout_be.php" method="GET">
             <span class="error">* required field</span>
             <p>Delivery Address</p>
             <input type="text" name="street1" placeholder="Street Address 1">

@@ -8,4 +8,5 @@
  */
 session_start();
 include("../HTML/header.html");
+include ("../HTML/index.html");
 ?>

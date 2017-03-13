@@ -25,6 +25,7 @@ if ($_REQUEST["password"] && $_REQUEST["username"]) {
     if (count($row) !== 0) {
         $id = $temp_username;
         session_start();
+        $_SESSION['username'] = $temp_username;
         $_SESSION['id'] = true;
         header('Location: index.php');
         exit();
