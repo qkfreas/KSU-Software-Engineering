@@ -5,44 +5,55 @@
     <title>Checkout</title>
 </head>
 <body>
-<div class="center-stage">
-    <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
+    <div class="center-stage" >
+        <div style="float: left;width: 50%;margin-right: 50%">
+        <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
-        <form action="../PHP/checkout_be.php" method="GET">
-            <span class="error">* required field</span>
-            <p>Delivery Address</p>
-            <input type="text" name="street1" placeholder="Street Address 1">
-            <span class="error">* <?php echo $street1Err;?></span><br>
-            <input type="text" name="street2" placeholder="Street Address 2"><br>
-            <input type="text" name="city" placeholder="City">
-            <span class="error">* <?php echo $cityErr ?></span><br>
-            <input type="text" name="state" placeholder="State">
-            <span class="error">* <?php echo $stateErr ?></span><br>
-            <input type="text" name="zip_code" placeholder="Zip Code">
-            <span class="error">* <?php echo $zip_codeErr?></span><br>
-            <br>
-            <input type="tel" name="phone_number" placeholder="Phone Number">
-            <span class="error">* <?php echo $zip_code ?></span><br>
-            <br>
-            <br>
-            <p>Payment Method</p>
-            <input type="radio" name="cash_credit" value="cash">Cash
-            <input type="radio" name="cash_credit" value="credit">Credit
-            <br><br>No need to fill the boxes below if cash is selected.
-            <br><br>
-            <input type="text" name="credit_number" placeholder="Credit Card Number">
-            <br>Expiration Date
-            <input type="date" name="exp_date">
-            <br>CSV
-            <input type="text" name="cvv_code">
-            <br>
-            <br>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
-<?php else:?>
-        You must be logged in in order to checkout.
+            <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;">
+                <span class="error">* required field</span>
+                <p>Delivery Address</p>
+                <input type="text" name="street1" placeholder="Street Address 1">
+                <span class="error">* <?php echo $street1Err;?></span><br>
+                <input type="text" name="street2" placeholder="Street Address 2"><br>
+                <input type="text" name="city" placeholder="City">
+                <span class="error">* <?php echo $cityErr ?></span><br>
+                <input type="text" name="state" placeholder="State">
+                <span class="error">* <?php echo $stateErr ?></span><br>
+                <input type="text" name="zip_code" placeholder="Zip Code">
+                <span class="error">* <?php echo $zip_codeErr?></span><br>
+                <br>
+                <input type="tel" name="phone_number" placeholder="Phone Number">
+                <span class="error">* <?php echo $zip_code ?></span><br>
+                <br>
+                <br>
+                <p>Payment Method</p>
+                <input type="radio" name="cash_credit" value="cash">Cash
+                <input type="radio" name="cash_credit" value="credit">Credit
+                <br><br>No need to fill the boxes below if cash is selected.
+                <br><br>
+                <input type="text" name="credit_number" placeholder="Credit Card Number">
+                <br>Expiration Date
+                <input type="date" name="exp_date">
+                <br>CSV
+                <input type="text" name="cvv_code">
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="Place Order">
+            </form>
+    <?php else:?>
+            You must be logged in in order to checkout.
+        </div>
+    <?php endif; ?>
+        <div style="float: right;width: 25%;margin-left: 50%">
+            <textarea readonly>
+        <?php
+                foreach($_SESSION['user_selection'] as $value) {
+                    echo $value." ";
+                }
+        ?>
+    </textarea>
+        </div>
     </div>
-<?php endif; ?>
 </body>
 </html>

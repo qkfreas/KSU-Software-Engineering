@@ -9,4 +9,5 @@
 session_start();
 include ("../HTML/header.html");
 include ('../HTML/checkout.html');
+//include ('../HTML/order_review.html');
 ?>

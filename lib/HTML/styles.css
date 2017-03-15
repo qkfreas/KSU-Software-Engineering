@@ -1,12 +1,16 @@
+html {
+    font-family: sans-serif;
+}
 header {
     background-color: darkslategrey;
     padding: 5px 10%;
     margin: 0;
+    width: 80%;
 }
 
 .head {
     margin: auto 0;
-    padding: 10px;
+    padding: 5px;
     display: block;
     background-image: url("../images/header.png");
     width: 100%;
@@ -21,7 +25,7 @@ header {
     background-color: white;
     padding: 5px 5px 25px;
     margin:auto;
-
+    width: 100%;
 }
 .nav h3 {
     float: none;
@@ -48,7 +52,8 @@ header {
 
 .center-stage {
     margin: auto;
-    padding: 10px 25%;
+    /*padding: 10px 25%;*/
+    width: 80%;
 }
 
 a:link {
@@ -86,4 +91,9 @@ a:visited {
     background: no-repeat;
     background-size: 100%;
     width: 50px;
+}
+
+.order_review {
+    float: left;
+    margin-left: 50%;
 }
