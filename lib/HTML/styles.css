@@ -50,10 +50,9 @@ header {
 
 }
 
-.center-stage {
+.center {
     margin: auto;
-    /*padding: 10px 25%;*/
-    width: 80%;
+    width: 200px;
 }
 
 a:link {

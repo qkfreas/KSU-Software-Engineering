@@ -6,7 +6,6 @@
  * Time: 9:58 AM
  */
 include "server.php";
-//    $connectionInfo = array("Database"=>$dbname,"UID" =>$username, "PWD"=>$password, "MultipleActiveResultSets"=>true);
     $conn = sqlsrv_connect($servername,$connectionInfo);
     if(!$conn) {
         die(print_r(sqlsrv_errors(), true));

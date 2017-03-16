@@ -5,8 +5,8 @@
     <title>Checkout</title>
 </head>
 <body>
-    <div class="center-stage" >
-        <div style="float: left;width: 50%;margin-right: 50%">
+    <div class="center">
+        <div style="width: 400px;">
         <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
             <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;">
@@ -41,11 +41,7 @@
                 <br>
                 <input type="submit" value="Place Order">
             </form>
-    <?php else:?>
-            You must be logged in in order to checkout.
-        </div>
-    <?php endif; ?>
-        <div style="float: right;width: 25%;margin-left: 50%">
+            <div>
             <textarea readonly>
         <?php
                 foreach($_SESSION['user_selection'] as $value) {
@@ -53,7 +49,12 @@
                 }
         ?>
     </textarea>
+            </div>
+    <?php else:?>
+            You must be logged in in order to checkout.
         </div>
+    <?php endif; ?>
+
     </div>
 </body>
 </html>
