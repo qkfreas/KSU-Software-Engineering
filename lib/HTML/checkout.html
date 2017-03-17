@@ -27,7 +27,7 @@
                 <br>
                 <br>
                 <p>Payment Method</p>
-                <input type="radio" name="cash_credit" value="cash">Cash
+                <input type="radio" name="cash_credit" value="cash" checked>Cash
                 <input type="radio" name="cash_credit" value="credit">Credit
                 <br><br>No need to fill the boxes below if cash is selected.
                 <br><br>
@@ -42,16 +42,13 @@
                 <input type="submit" value="Place Order">
             </form>
             <div>
-            <textarea readonly>
-        <?php
-                foreach($_SESSION['user_selection'] as $value) {
-                    echo $value." ";
-                }
-        ?>
-    </textarea>
+               <textarea readonly class="order_review"><?php echo $_SESSION['user_selection'];
+echo "\n\nNumber pizzas: ".$_SESSION['number_of_pizzas']." @ $12.95 each";
+echo "\nNumber toppings: ".$_SESSION['number_of_toppings']." @ $0.50 each";
+echo "\nGrand Total: $".$_SESSION['grand_total'];?></textarea>
             </div>
     <?php else:?>
-            You must be logged in in order to checkout.
+            You must be logged in to checkout.
         </div>
     <?php endif; ?>
 

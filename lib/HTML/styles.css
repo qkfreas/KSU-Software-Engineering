@@ -93,6 +93,8 @@ a:visited {
 }
 
 .order_review {
-    float: left;
+    float: right;
     margin-left: 50%;
+    width: 250px;
+    height: 300px;
 }
