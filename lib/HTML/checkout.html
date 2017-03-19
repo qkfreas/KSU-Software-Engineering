@@ -10,6 +10,11 @@
         <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
             <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;">
+                <br>
+                <input type="radio" name="order_type" value="Delivery" checked>Delivery
+                <input type="radio" name="order_type" value="Pickup"> Pickup
+                <br>
+                <br>
                 <span class="error">* required field</span>
                 <p>Delivery Address</p>
                 <input type="text" name="street1" placeholder="Street Address 1">
