@@ -5,11 +5,11 @@
     <title>Checkout</title>
 </head>
 <body>
-    <div class="center" style="width: 35%;">
-        <div style="width: 400px; float: left;">
+    <div class="center" >
+        <div style="width: 100%; float: left; padding: 0 10px;">
         <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
-            <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;">
+            <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;background: rgba(0,0,0, 0.5);padding: 0 84px 0 10px">
                 <br>
                 <input type="radio" name="order_type" value="Delivery" checked>Delivery
                 <input type="radio" name="order_type" value="Pickup"> Pickup
@@ -47,14 +47,14 @@
                 <input type="submit" value="Place Order">
             </form>
         </div>
-        <div style=" margin-left: 410px;padding: 10px;">
+        <div style=" margin-left: 460px; padding: 10px;">
            <textarea readonly class="order_review"><?php echo $_SESSION['user_selection'];
 echo "\n\nNumber pizzas: ".$_SESSION['number_of_pizzas']." @ $12.95 each";
 echo "\nNumber toppings: ".$_SESSION['number_of_toppings']." @ $0.50 each";
 echo "\nGrand Total: $".$_SESSION['grand_total'];?></textarea>
         </div>
     <?php else:?>
-            You must be logged in to checkout.
+        <h2 style="text-align: center;">You must be logged in to checkout.</h2>
 
     <?php endif; ?>
 

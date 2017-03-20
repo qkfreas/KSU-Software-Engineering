@@ -8,6 +8,11 @@ header {
     width: 80%;
 }
 
+body {
+    background-image: url("../images/background.jpg");
+    background-size: 100%;
+}
+
 .head {
     margin: auto 0;
     padding: 5px;
@@ -31,6 +36,10 @@ header {
     float: none;
     color: black;
 }
+h2 {
+    text-shadow: 2px 2px 8px black;
+    color: white;
+}
 .nav .button {
     margin: 0 5px 0 0;
     float: left;
@@ -53,6 +62,12 @@ header {
 .center {
     margin: auto;
     width: 200px;
+}
+
+.center .transparent {
+    background: rgba(0,0,0, 0.5);
+    padding: 10px;
+    color: white;
 }
 
 a:link {
