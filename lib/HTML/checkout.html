@@ -5,8 +5,8 @@
     <title>Checkout</title>
 </head>
 <body>
-    <div class="center">
-        <div style="width: 400px;">
+    <div class="center" style="width: 35%;">
+        <div style="width: 400px; float: left;">
         <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
             <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;">
@@ -46,15 +46,16 @@
                 <br>
                 <input type="submit" value="Place Order">
             </form>
-            <div>
-               <textarea readonly class="order_review"><?php echo $_SESSION['user_selection'];
+        </div>
+        <div style=" margin-left: 410px;padding: 10px;">
+           <textarea readonly class="order_review"><?php echo $_SESSION['user_selection'];
 echo "\n\nNumber pizzas: ".$_SESSION['number_of_pizzas']." @ $12.95 each";
 echo "\nNumber toppings: ".$_SESSION['number_of_toppings']." @ $0.50 each";
 echo "\nGrand Total: $".$_SESSION['grand_total'];?></textarea>
-            </div>
+        </div>
     <?php else:?>
             You must be logged in to checkout.
-        </div>
+
     <?php endif; ?>
 
     </div>

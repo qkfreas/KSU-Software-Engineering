@@ -13,14 +13,27 @@
     <div class="nav">
         <a href="../PHP/index.php" class="button">Home</a>
         <!--<a href="../PHP/deals.php" class="button">Deals</a>-->
-        <a href="../PHP/contact.php" class="button">Contact Us</a>
+        <!--<a href="../PHP/contact.php" class="button">Contact Us</a>-->
         <!--<a href="../PHP/about.php" class="button">About Us</a>-->
         <a href="../PHP/checkout.php" class="button">Checkout</a>
+
         <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
         <a href="../PHP/logout.php" class="button" style="float: right">Logout</a>
         <?php else: ?>
         <a href="../PHP/login.php" class="button" style="float: right">Login</a>
         <?php endif; ?>
+
+        <?php if(isset($_SESSION['user_level']) && $_SESSION['user_level'] === 2): ?>
+        <a href="../PHP/orders.php" class="button">Orders</a>
+        <a href="../PHP/inventory.php" class="button">Inventory</a>
+        <?php else:?>
+        <?php endif;?>
+
+        <?php if(isset($_SESSION['user_level']) && $_SESSION['user_level'] === 1): ?>
+        <a href="../PHP/orders.php" class="button">Orders</a>
+
+        <?php else:?>
+        <?php endif;?>
     </div>
 </header>
 </html>

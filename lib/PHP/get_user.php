@@ -16,18 +16,23 @@ if ($_REQUEST["password"] && $_REQUEST["username"]) {
     $temp_username = $_REQUEST["username"];
     $temp_user_level = 0;
 
-//    $stm = sqlsrv_query($conn,"SELECT * FROM users WHERE user_name='$temp_username' AND user_pass='$temp_password' AND user_level='$temp_user_level'");
     $stm = sqlsrv_query($conn,"SELECT * FROM users WHERE user_name='$temp_username' AND user_pass='$temp_password'");
     $row = sqlsrv_fetch_array($stm);
     if (!$row)
         die(print_r(sqlsrv_errors(), true));
 
     if (count($row) !== 0) {
+        $stm = sqlsrv_query($conn,"SELECT user_level FROM users WHERE user_name='$temp_username'");
+        $row = sqlsrv_fetch_array($stm);
+        if (!$row)
+            die(print_r(sqlsrv_errors(), true));
         $id = $temp_username;
         session_start();
         $_SESSION['username'] = $temp_username;
         $_SESSION['id'] = true;
-        $_SESSION['user_level'];
+        foreach($row as $value) {
+            $_SESSION['user_level'] = $value;
+        }
         header('Location: index.php');
         exit();
     }
