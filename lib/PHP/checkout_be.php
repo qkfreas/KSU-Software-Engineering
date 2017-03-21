@@ -62,8 +62,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] === true) {
     $temp_selection = $_SESSION['user_selection'];
     $temp_total = $_SESSION['grand_total'];
     $sql = "UPDATE users SET street_1='".$street1."', street_2='".$street2."', city='".$city."', state_re='".$state."', zip_code='".$zip_code."', phone_number='".$phone_number."', credit_number ='".$credit_number."', exp_date='".$exp_date."', cvv_code='".$cvv_code."'  WHERE user_name='".$_SESSION['username']."';
-    INSERT INTO orders (user_name,order_summary,total,order_type) VALUES ('$temp_name','$temp_selection','$temp_total','$delivery_type');
-    ";
+    INSERT INTO orders (user_name,order_summary,total,order_type) VALUES ('$temp_name','$temp_selection','$temp_total','$delivery_type');";
 
     $stmt = sqlsrv_query($conn, $sql);
     if ($stmt === false) {

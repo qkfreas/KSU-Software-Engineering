@@ -9,7 +9,7 @@
         <div style="width: 100%; float: left; padding: 0 10px;">
         <?php if(isset($_SESSION['id']) && $_SESSION['id'] === true): ?>
 
-            <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;background: rgba(0,0,0, 0.5);padding: 0 84px 0 10px">
+            <form action="../PHP/checkout_be.php" method="GET" style="width: 50%;background: rgba(0,0,0, 0.5);padding: 0 84px 10px 10px; color: white;">
                 <br>
                 <input type="radio" name="order_type" value="Delivery" checked>Delivery
                 <input type="radio" name="order_type" value="Pickup"> Pickup
